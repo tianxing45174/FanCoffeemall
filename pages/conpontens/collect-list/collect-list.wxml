@@ -1,0 +1,19 @@
+<view class="reqlist">
+  <view class="shangping" wx:for="{{arr}}" wx:key="index" data-pid="{{item.pid}}" bindtap="godetail">
+    <view>
+      <image src="{{item.smallImg}}" mode="" class="image" />
+    </view>
+    <view class="name">
+      <text>{{item.name}}</text>
+    </view>
+    <view class="english name">
+      <text>{{item.enname}}</text>
+    </view>
+    <view class="jiage">
+      <text>{{'$'+item.price}}</text>
+    </view>
+    <view>
+      <van-button plain size="mini" type="danger" data-pid="{{item.pid}}" catchtap="delectCollect">删除</van-button>
+    </view>
+  </view>
+</view>

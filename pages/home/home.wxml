@@ -1,0 +1,27 @@
+<!--pages/home/home.wxml-->
+<view class="mainbg">
+<!-- 顶部栏 -->
+  <!-- <view class="top"> -->
+    <!-- 左边是用户名加问候语-->
+    <!-- <view class="user"> -->
+      <!-- <text>上午好</text> -->
+      <!-- <text>。。。</text> -->
+      <van-search placeholder="请输入搜索关键词" shape="round"  class="search" bind:focus="onSearch"/>
+    <!-- </view> -->
+      
+    
+      
+    <!-- </view> -->
+  </view>
+<view >
+<swiper autoplay circular  	indicator-dots>
+  <swiper-item wx:for="{{banner}}" wx:key="index">
+    <image src="{{item.bannerImg}}" mode="" class="lunbo"/>
+  </swiper-item>
+</swiper>
+</view>
+<view>
+  <view>
+    <homelist wx:if="{{hotlist}}" arr="{{hotlist}}"></homelist>
+  </view>
+</view>

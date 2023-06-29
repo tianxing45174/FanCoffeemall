@@ -1,0 +1,19 @@
+<view class="reqlist">
+  <view class="shangping" wx:for="{{arr}}" wx:key="index" data-pid="{{item.pid}}" bindtap="godetail">
+    <view class="remai">
+      热卖
+    </view>
+    <view>
+      <image src="{{item.smallImg}}" mode="" class="image" />
+    </view>
+    <view class="name">
+      <text>{{item.name}}</text>
+    </view>
+    <view class="english name">
+      <text>{{item.enname}}</text>
+    </view>
+    <view class="jiage">
+      <text>{{'$'+item.price}}</text>
+    </view>
+  </view>
+</view>

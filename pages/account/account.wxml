@@ -1,0 +1,16 @@
+<!--pages/account/account.wxml-->
+<van-cell-group inset>
+  <van-cell title="修改密码" is-link bind:click="showPopup" />
+  <van-cell title="注销账号" is-link bind:click="destroyAccount" />
+  <van-cell>
+    <van-button round type="info" size="large" bind:click="logout">退出登录</van-button>
+  </van-cell>
+</van-cell-group>
+<van-popup show="{{ show }}" position="bottom" closeable custom-style="height: 40%;" bind:close="onClose">
+  <van-cell-group>
+    <van-cell title="修改密码" />
+    <van-field value="{{ oldpassword }}" label="旧密码" placeholder="请输入旧密码" border="{{ false }}" bind:blur="Changeoldpassword"/>
+    <van-field value="{{ newpassword }}" label="新密码" placeholder="请输入新密码" border="{{ false }}" bind:blur="Changenewpassword"/>
+    <van-button round type="info" size="large" bind:click="updatePassword">确认修改</van-button>
+  </van-cell-group>
+</van-popup>

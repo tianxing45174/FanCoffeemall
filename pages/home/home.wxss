@@ -1,0 +1,21 @@
+/* pages/home/home.wxss */
+.mainbg{
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  line-height: 30px;
+}
+.search{
+  background: red;
+}
+/* .top{
+  display: flex;
+  padding: 0 10px 0 10px;
+  height: 30px;
+} */
+/* .user  text:nth-of-type(2){
+  color: blue;
+} */
+.lunbo{
+  height: 100%;
+  width: 100%;
+}

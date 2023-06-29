@@ -1,0 +1,29 @@
+<!--pages/addaddress/addaddress.wxml-->
+<view>
+  <van-cell-group inset>
+    <van-field value="{{ name }}" id="name" placeholder="请输入用户名" bind:blur="changeName" label="姓名" error="{{nameerror}}" />
+    <van-field value="{{ tel }}" placeholder="请输入电话" bind:blur="changeTel" label="电话" />
+    <van-cell title="地区：{{city?city:''}}{{county?'/'+county:''}}" is-link bind:click="showPopup" />
+    <van-field value="{{ addressDetail }}" placeholder="请输入详细地址" bind:blur="changeAddressDetail" label="详细地址" />
+    <van-field value="{{ postalCode }}" placeholder="请输入邮政编码" bind:blur="changePostalCode" label="邮政编码" />
+  </van-cell-group>
+  <van-cell-group inset>
+    <van-cell title="设置默认地址">
+      <van-switch checked="{{ checked }}" bind:change="switchChange" />
+    </van-cell>
+    <van-tabbar>
+      <van-tabbar-item>
+        <van-button disabled="{{savecheck}}" type="info" size="large" round bind:click="saveaddress">保存</van-button>
+      </van-tabbar-item>
+    </van-tabbar>
+    <van-tabbar>
+      <van-tabbar-item>
+        <van-button wx:if="{{type}}" type="default" size="large" round bind:click="delete">删除</van-button>
+      </van-tabbar-item>
+    </van-tabbar>
+  </van-cell-group>
+
+  <van-popup show="{{ show }}" bind:close="closePopup" position="bottom">
+    <van-area area-list="{{ areaList }}" columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}" bind:confirm="changeadd" bind:cancel="closePopup"/>
+  </van-popup>
+</view>

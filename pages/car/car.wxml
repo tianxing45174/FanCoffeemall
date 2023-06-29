@@ -1,0 +1,13 @@
+<van-cell-group>
+  <van-nav-bar title="购物车" left-text="{{type?'返回':''}}" bind:click-left="backdetail" bind:click-right="deletecars">
+    <van-button size="small" slot="right" round type="danger">删除</van-button>
+  </van-nav-bar>
+</van-cell-group>
+<view>
+  <carlist class="carlist" bindcarreplace="replace" wx:if="{{hotlist}}" arr="{{hotlist}}" radio="{{radio}}"></carlist>
+</view>
+<van-submit-bar price="{{ totalmoney*100 }}" button-text="提交订单" bind:submit="submitorder" tip="{{ true }}">
+  <van-tag type="primary">
+    <van-checkbox value="{{ radio }}" bind:change="changeallcheck">全选</van-checkbox>
+  </van-tag>
+</van-submit-bar>

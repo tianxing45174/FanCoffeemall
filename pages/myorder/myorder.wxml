@@ -1,0 +1,12 @@
+<!--pages/myorder/myorder.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <orderlist bindorderlistreplace="replace" wx:if="{{orderlist}}" orderlist="{{orderlist}}"></orderlist>
+  </van-tab>
+  <van-tab title="进行中">
+    <orderlist bindorderlistreplace="replace" wx:if="{{orderlist}}" orderlist="{{orderlist}}"></orderlist>
+  </van-tab>
+  <van-tab title="已完成">
+    <orderlist bindorderlistreplace="replace" wx:if="{{orderlist}}" orderlist="{{orderlist}}"></orderlist>
+  </van-tab>
+</van-tabs>

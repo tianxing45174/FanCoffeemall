@@ -1,0 +1,16 @@
+<view>
+  <van-nav-bar
+  title="搜索"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+/>
+</view>
+<view>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:cancel="onCancel" bind:search="onSearch" shape="round" />
+</view>
+<view>
+  <view>
+    <homelist wx:if="{{hotlist}}" arr="{{hotlist}}"></homelist>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/mycollect/mycollect.wxml-->
+<collectlist wx:if="{{collectlist}}" arr="{{collectlist}}" bindcollectreplace="replace"></collectlist>

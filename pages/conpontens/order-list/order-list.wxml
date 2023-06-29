@@ -1,0 +1,21 @@
+<!--pages/conpontens/order-list/order-list.wxml-->
+<view>
+  <van-cell-group wx:for="{{orderlist}}" wx:key="index" >
+    <van-cell title="订单信息" label="{{item[0].oid}}" border="{{ false }}">
+    <view wx:if="{{item[0].status==2}}">
+    <text>已完成  </text>
+    <van-icon name="fire-o" bind:click="deleteorder" data-oid="{{item[0].oid}}"/>
+    </view>
+      <van-button wx:if="{{item[0].status!=2}}" round bind:click="confirm" data-oid="{{item[0].oid}}" type="info">确认收货</van-button>
+    </van-cell>
+    <van-cell wx:for="{{item}}" wx:key="index" data-pid="{{item.id}}">
+      <van-card num="{{item.count}}" price="{{item.price}}" desc="{{item.enname}}" title="{{item.name}} {{item.rule}}" thumb="{{ item.smallImg }}"></van-card>
+    </van-cell>
+    <van-cell title="{{item[0].createdAt}}" value="订单金额：￥{{item[0].totalmoney}}" label="共{{item[0].totalcount}}件商品" border="{{ false }}" />
+  </van-cell-group>
+</view>
+<!-- <van-cell-group>
+  <van-cell>
+    <van-submit-bar price="{{ totalmoney*100 }}" label="共计{{totalcount}}件商品 合计：" button-text="提交订单" bind:submit="onSubmit" />
+  </van-cell>
+</van-cell-group> -->

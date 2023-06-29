@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "collectlist":"../conpontens/collect-list/collect-list"
+  }
+}
